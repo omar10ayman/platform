@@ -51,7 +51,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
           opacity: omaranimation?.value,
           child: Center(
             child: Container(
-                margin: const EdgeInsets.only(top: 600),
+                margin: const EdgeInsets.only(top: 610),
                 child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
