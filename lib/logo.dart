@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'dart:math';
+// import 'dart:math';
 
 class Logo extends StatefulWidget {
   const Logo({Key? key}) : super(key: key);
@@ -42,6 +42,12 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
         setState(() {});
       });
     animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
   }
 
   // void change() {
