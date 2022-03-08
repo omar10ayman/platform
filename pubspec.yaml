@@ -79,7 +79,7 @@ flutter:
   fonts:
     - family: gill
       fonts:
-        - asset: fonts/Gill Sans MT Bold.ttf       
+        - asset: fonts/MyriadArabic-Bold.otf       
   # fonts:
   #   - family: Schyler
   #     fonts:
