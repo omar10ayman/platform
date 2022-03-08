@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatefulWidget {
-  Logo({Key? key}) : super(key: key);
+  const Logo({Key? key}) : super(key: key);
 
   @override
   State<Logo> createState() => _LogoState();
