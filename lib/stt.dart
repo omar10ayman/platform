@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, avoid_print
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_speech/flutter_speech.dart';
