@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'dart:math';
+import 'package:button/slide.dart';
+import 'package:button/slide_dots.dart';
+import 'package:button/slide_item.dart';
+import 'package:button/stt.dart';
 
 class Logo extends StatefulWidget {
   const Logo({Key? key}) : super(key: key);
@@ -16,6 +19,9 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
   //margin animation for button
   late Animation<double> marginanimation2;
 
+  int _currentPage = 0;
+  final _pageController = PageController(initialPage: 0);
+
   @override
   void initState() {
     super.initState();
@@ -29,13 +35,13 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
       ..addListener(() {
         setState(() {});
       });
-    marginanimation1 = Tween<double>(begin: 140, end: 20).animate(
+    marginanimation1 = Tween<double>(begin: 100, end: 5).animate(
         CurvedAnimation(
             parent: animationController, curve: Curves.fastOutSlowIn))
       ..addListener(() {
         setState(() {});
       });
-    marginanimation2 = Tween<double>(begin: 150, end: 630).animate(
+    marginanimation2 = Tween<double>(begin: 150, end: 605).animate(
         CurvedAnimation(
             parent: animationController, curve: Curves.fastOutSlowIn))
       ..addListener(() {
@@ -48,6 +54,13 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
   void dispose() {
     super.dispose();
     animationController.dispose();
+    _pageController.dispose();
+  }
+
+  _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
   }
 
   // void change() {
@@ -55,66 +68,109 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
   //     margin = 610;
   //   });
   // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFF191919),
         body: Stack(
-          children: [
-            // SizedBox(
-            //     width: double.infinity,
-            //     height: double.infinity,
-            //     child: Image.asset(
-            //       "images/25.jpg",
-            //       fit: BoxFit.fill,
-            //     )),
-            Opacity(
-              opacity: omaranimation.value,
-              child: Center(
-                child: AnimatedContainer(
-                    margin: EdgeInsets.only(top: marginanimation1.value),
-                    duration: const Duration(milliseconds: 0),
-                    child: Image.asset("images/24.png")),
-              ),
-
-              // TweenAnimationBuilder(
-              //   child: Center(
-              //     child: Image.asset("images/24.png"),
-              //   ),
-              //   duration: const Duration(milliseconds: 1000),
-              //   tween: Tween<double>(begin: 140, end: 20),
-              //   builder: (context, double value, child) {
-              //     return Padding(
-              //       padding: EdgeInsets.only(top: value),
-              //       child: child,
-              //     );
-              //   },
-              // ),
+      children: <Widget>[
+        SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: Image.asset(
+              "images/26.png",
+              fit: BoxFit.fill,
+            )),
+        Opacity(
+          opacity: omaranimation.value,
+          child: Transform.scale(
+            scale: 0.6,
+            child: AnimatedContainer(
+                margin: EdgeInsets.only(top: marginanimation1.value),
+                duration: const Duration(milliseconds: 0),
+                child: Image.asset("images/24_cropped.png")),
+          ),
+        ),
+        // TweenAnimationBuilder(
+        //   child: Center(
+        //     child: Image.asset("images/24.png"),
+        //   ),
+        //   duration: const Duration(milliseconds: 1000),
+        //   tween: Tween<double>(begin: 140, end: 20),
+        //   builder: (context, double value, child) {
+        //     return Padding(
+        //       padding: EdgeInsets.only(top: value),
+        //       child: child,
+        //     );
+        //   },
+        // ),
+        Opacity(
+          opacity: omaranimation.value,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 400),
+            child: PageView.builder(
+                onPageChanged: _onPageChanged,
+                scrollDirection: Axis.horizontal,
+                controller: _pageController,
+                itemCount: slideList.length,
+                itemBuilder: (ctx, i) => SlideItem(i)),
+          ),
+        ),
+        Opacity(
+          opacity: omaranimation.value,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 650, left: 169),
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  margin: const EdgeInsets.only(bottom: 200),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      for (int i = 0; i < slideList.length; i++)
+                        if (i == _currentPage)
+                          SlideDots(true)
+                        else
+                          SlideDots(false)
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Opacity(
-              opacity: omaranimation.value,
-              child: Center(
-                child: AnimatedContainer(
-                    margin: EdgeInsets.only(top: marginanimation2.value),
-                    duration: const Duration(milliseconds: 0),
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.only(top: 15, bottom: 15),
-                            primary: Colors.black26,
-                            onSurface: Colors.white,
-                            side:
-                                const BorderSide(color: Colors.white, width: 4),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20))),
-                        child: const Text(
-                          "    GET STARTED    ",
-                          style: TextStyle(fontSize: 25, fontFamily: 'gill'),
-                        ))),
-              ),
-            )
-          ],
-        ));
+          ),
+        ),
+        Opacity(
+          opacity: omaranimation.value,
+          child: Center(
+            child: AnimatedContainer(
+                margin: EdgeInsets.only(top: marginanimation2.value),
+                duration: const Duration(milliseconds: 0),
+                child: SizedBox(
+                  height: 65,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SpeechToText()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.only(
+                              top: 10, bottom: 10, right: 35, left: 35),
+                          primary: Colors.black.withOpacity(0),
+                          onSurface: Colors.white,
+                          side: const BorderSide(color: Colors.white, width: 2),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30))),
+                      child: const Text(
+                        "GET STARTED",
+                        style: TextStyle(fontSize: 33, fontFamily: 'gill'),
+                      )),
+                )),
+          ),
+        )
+      ],
+    ));
   }
 }
