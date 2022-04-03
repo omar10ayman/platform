@@ -164,7 +164,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
                       child: const Text(
-                        "GET STARTED",
+                        "get started",
                         style: TextStyle(fontSize: 33, fontFamily: 'gill'),
                       )),
                 )),

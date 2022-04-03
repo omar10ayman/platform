@@ -6,6 +6,7 @@ import 'package:flutter_speech/flutter_speech.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:button/refersh.dart';
+import 'package:button/Map.dart';
 // import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class SpeechToText extends StatefulWidget {
@@ -80,6 +81,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                                         : transcription == 'burger'
                                             ? asset = 'assets/gifs/Burger.gif'
                                             : asset = 'assets/gifs/Null.gif';
+    // asset = gifs[transcription];
   }
 
   void activateSpeechRecognizer() {
