@@ -1,11 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.button">
    <application
-<<<<<<< HEAD
-        android:label="Communicate Platform"
-=======
         android:label="TWS"
->>>>>>> 29f64704ac9a809a572271c447e7724f3e5d41d8
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
