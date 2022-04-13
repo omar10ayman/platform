@@ -18,14 +18,18 @@ class SlideItem extends StatelessWidget {
               fontSize: 35,
               decoration: TextDecoration.none,
               fontFamily: 'gill',
-              color: Colors.white),
+              color: Colors.red),
         ),
         const SizedBox(
           height: 20,
         ),
         Text(slideList[index].title2,
             textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.red, fontSize: 25))
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'gill',
+              fontSize: 50,
+            ))
       ],
     );
   }

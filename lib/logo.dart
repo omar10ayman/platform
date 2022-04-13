@@ -87,7 +87,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
             child: AnimatedContainer(
                 margin: EdgeInsets.only(top: marginanimation1.value),
                 duration: const Duration(milliseconds: 0),
-                child: Image.asset("images/24_cropped.png")),
+                child: Image.asset("images/2.png")),
           ),
         ),
         // TweenAnimationBuilder(
@@ -178,7 +178,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
                       child: const Text(
-                        "get started",
+                        "Get Started",
                         style: TextStyle(fontSize: 33, fontFamily: 'gill'),
                       )),
                 )),

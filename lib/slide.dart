@@ -11,7 +11,9 @@ class Slide {
 }
 
 final slideList = [
-  Slide(title1: 'Welcome to ', title2: 'Two-Way sign language translator'),
+  Slide(
+      title1: 'T W O - W A Y S ',
+      title2: ' SIGN LANGUAGE            T R A N S L A T O R '),
   Slide(
       title1: 'A communication platform',
       title2: 'for helping the deaf and mute'),
