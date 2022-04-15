@@ -131,7 +131,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                     child: Text('Voice to sign language',
                         style: TextStyle(
                             fontFamily: 'gill',
-                            color: Colors.white30,
+                            color: Colors.white,
                             fontSize: 20)),
                   ),
                 ),

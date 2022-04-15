@@ -35,13 +35,13 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
       ..addListener(() {
         setState(() {});
       });
-    marginanimation1 = Tween<double>(begin: 100, end: 5).animate(
+    marginanimation1 = Tween<double>(begin: 100, end: 80).animate(
         CurvedAnimation(
             parent: animationController, curve: Curves.fastOutSlowIn))
       ..addListener(() {
         setState(() {});
       });
-    marginanimation2 = Tween<double>(begin: 150, end: 605).animate(
+    marginanimation2 = Tween<double>(begin: 150, end: 680).animate(
         CurvedAnimation(
             parent: animationController, curve: Curves.fastOutSlowIn))
       ..addListener(() {
@@ -87,7 +87,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
             child: AnimatedContainer(
                 margin: EdgeInsets.only(top: marginanimation1.value),
                 duration: const Duration(milliseconds: 0),
-                child: Image.asset("images/2.png")),
+                child: Image.asset("images/2.png",)),
           ),
         ),
         // TweenAnimationBuilder(
@@ -170,8 +170,8 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 10, right: 35, left: 35),
+                          padding: const EdgeInsetsDirectional.only(
+                              start: 70, end: 70),
                           primary: Colors.black.withOpacity(0),
                           onSurface: Colors.white,
                           side: const BorderSide(color: Colors.white, width: 2),

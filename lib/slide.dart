@@ -10,9 +10,9 @@ class Slide {
 
 final slideList = [
   Slide(
-    title1: "images/sign.png",
+    title1: "images/name.png",
   ),
   Slide(
-    title1: "images/sign.png",
+    title1: "images/Words.png",
   ),
 ];
