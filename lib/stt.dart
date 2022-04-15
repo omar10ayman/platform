@@ -113,7 +113,10 @@ class _SpeechToTextState extends State<SpeechToText> {
         backgroundColor: Color.fromRGBO(0, 0, 0, 0),
         pathBackgroundColor: Color.fromRGBO(0, 0, 0, 0));
     return Scaffold(
+      
       body: Stack(children: [
+        SizedBox(width: double.infinity,height:double.infinity,child: Image.asset(
+              "images/cover.png"),),
         Positioned(
           child: Container(
             height: size.height,
