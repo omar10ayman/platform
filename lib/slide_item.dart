@@ -8,6 +8,6 @@ class SlideItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Image.asset(slideList[index].title1));
+    return Center(child: Image.asset(slideList[index].title1, ));
   }
 }

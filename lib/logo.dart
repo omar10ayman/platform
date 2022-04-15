@@ -106,7 +106,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
         Opacity(
           opacity: omaranimation.value,
           child: Padding(
-            padding: const EdgeInsets.only(top: 400),
+            padding: const EdgeInsets.only(top: 200),
             child: PageView.builder(
                 onPageChanged: _onPageChanged,
                 scrollDirection: Axis.horizontal,
