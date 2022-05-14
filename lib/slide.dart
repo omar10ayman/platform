@@ -13,6 +13,6 @@ final slideList = [
     title1: "images/name.png",
   ),
   Slide(
-    title1: "images/Words.png",
+    title1: "images/word.png",
   ),
 ];
