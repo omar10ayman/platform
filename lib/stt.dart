@@ -113,21 +113,26 @@ class _SpeechToTextState extends State<SpeechToText> {
         backgroundColor: Color.fromRGBO(0, 0, 0, 0),
         pathBackgroundColor: Color.fromRGBO(0, 0, 0, 0));
     return Scaffold(
-      
       body: Stack(children: [
-        SizedBox(width: double.infinity,height:double.infinity,child: Image.asset(
-              "images/cover.png"),),
+        SizedBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: Image.asset("images/cover.png", fit: BoxFit.cover),
+        ),
         Positioned(
           child: Container(
             height: size.height,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter, end: Alignment.bottomCenter,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  colors: [Color(0xff2e3037), Color(0xff14161a)]),
-            ),
+            // // decoration: BoxDecoration(
+            // //   gradient: LinearGradient(
+            // //       begin: Alignment.topCenter, end: Alignment.bottomCenter,
+            // //       // ignore: prefer_const_literals_to_create_immutables
+            // //       colors: [Color(0xff2e3037), Color(0xff14161a)]),
+            // ),
             child: SingleChildScrollView(
               child: Column(children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Center(
                   child: Container(
                     padding: EdgeInsets.only(top: 55, bottom: 10),
@@ -135,7 +140,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                         style: TextStyle(
                             fontFamily: 'gill',
                             color: Colors.white,
-                            fontSize: 20)),
+                            fontSize: 25)),
                   ),
                 ),
                 Container(
@@ -279,14 +284,19 @@ class _SpeechToTextState extends State<SpeechToText> {
               height: 70,
               width: 70,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(35),
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: const [Color(0xff224ebf), Color(0xff16298c)])),
+                borderRadius: BorderRadius.circular(35),
+                color: Color.fromARGB(255, 169, 36, 27),
+                // gradient: LinearGradient(
+                //     begin: Alignment.bottomCenter,
+                //     end: Alignment.topCenter,
+                //     colors: const [
+                //       Color.fromARGB(255, 191, 73, 34),
+                //       Color(0xff16298c)
+                //     ])
+              ),
               child: AvatarGlow(
                   animate: _isListening,
-                  glowColor: Color(0xff224ebf),
+                  glowColor: Color.fromARGB(255, 131, 12, 32),
                   endRadius: 60,
                   duration: Duration(milliseconds: 2000),
                   repeatPauseDuration: Duration(milliseconds: 100),

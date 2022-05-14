@@ -43,7 +43,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
       end: 1.0,
     ).animate(CurvedAnimation(
         parent: animationController,
-        curve: const Interval(0.4, 1.0, curve: Curves.linear)))
+        curve: const Interval(0.6, 1.0, curve: Curves.linear)))
       ..addListener(() {
         setState(() {});
       });
@@ -99,7 +99,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
           child: Transform.scale(
             scale: 0.6,
             child: AnimatedContainer(
-                margin: EdgeInsets.only(top: 80),
+                margin: const EdgeInsets.only(top: 80),
                 duration: const Duration(milliseconds: 0),
                 child: Image.asset(
                   "images/2.png",
@@ -173,7 +173,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
           opacity: buttonanimation.value,
           child: Center(
             child: AnimatedContainer(
-              margin: const EdgeInsets.only(top: 600),
+              margin: const EdgeInsets.only(top: 630),
               height: 65,
               duration: const Duration(milliseconds: 0),
               child: ElevatedButton(
