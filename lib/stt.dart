@@ -36,7 +36,7 @@ class _SpeechToTextState extends State<SpeechToText> {
   bool _isListening = false;
 
   String transcription = '';
-  String asset = 'assets/gifs/Null.gif';
+  String asset = 'assets/gifs/Null.png';
   var color = Colors.grey[300];
 
   // String _currentLocale = 'en_US';
@@ -75,7 +75,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                 ? asset =
                                                     'assets/gifs/Spoon.gif'
                                                 : asset =
-                                                    'assets/gifs/Null.gif';
+                                                    'assets/gifs/Null.png';
     // asset = gifs[transcription];
   }
 
@@ -109,20 +109,20 @@ class _SpeechToTextState extends State<SpeechToText> {
         pathBackgroundColor: Color.fromRGBO(0, 0, 0, 0));
     return Scaffold(
       body: Stack(children: [
-        SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Image.asset("images/cover.png", fit: BoxFit.cover),
-        ),
+        // SizedBox(
+        //   width: double.infinity,
+        //   height: double.infinity,
+        //   child: Image.asset("images/cover.png", fit: BoxFit.cover),
+        // ),
         Positioned(
           child: Container(
             height: size.height,
-            // // decoration: BoxDecoration(
-            // //   gradient: LinearGradient(
-            // //       begin: Alignment.topCenter, end: Alignment.bottomCenter,
-            // //       // ignore: prefer_const_literals_to_create_immutables
-            // //       colors: [Color(0xff2e3037), Color(0xff14161a)]),
-            // ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter, end: Alignment.bottomCenter,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  colors: [Color(0xff2e3037), Color(0xff14161a)]),
+            ),
             child: SingleChildScrollView(
               child: Column(children: [
                 SizedBox(
@@ -139,7 +139,6 @@ class _SpeechToTextState extends State<SpeechToText> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -270,7 +269,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                 selectedLang.code == 'ar_EG'
                     ? color = Colors.grey[300]
                     : color = Colors.white;
-                if (asset == 'assets/gifs/Null.gif') {
+                if (asset == 'assets/gifs/Null.png') {
                   color = Colors.grey[300];
                 }
               });
