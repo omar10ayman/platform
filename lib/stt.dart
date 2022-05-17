@@ -1,12 +1,10 @@
-// ignore_for_file: prefer_const_constructors, avoid_print
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_speech/flutter_speech.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:button/refersh.dart';
-import 'package:button/Map.dart';
+// import 'package:button/Map.dart';
 // import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class SpeechToText extends StatefulWidget {
@@ -30,14 +28,6 @@ class Language {
 
   const Language(this.name, this.code);
 }
-
-// firebase_storage.Reference ref =
-//     firebase_storage.FirebaseStorage.instance.ref('مصباح.gif');
-// Future<void> downloadURLExample() async {
-//   String downloadURL = await firebase_storage.FirebaseStorage.instance
-//       .ref('مصباح.gif')
-//       .getDownloadURL();
-// }
 
 class _SpeechToTextState extends State<SpeechToText> {
   late SpeechRecognition _speech;
@@ -80,7 +70,12 @@ class _SpeechToTextState extends State<SpeechToText> {
                                         ? asset = 'assets/gifs/Brother.gif'
                                         : transcription == 'burger'
                                             ? asset = 'assets/gifs/Burger.gif'
-                                            : asset = 'assets/gifs/Null.gif';
+                                            : transcription == 'spoon' ||
+                                                    transcription == 'معلقه'
+                                                ? asset =
+                                                    'assets/gifs/Spoon.gif'
+                                                : asset =
+                                                    'assets/gifs/Null.gif';
     // asset = gifs[transcription];
   }
 

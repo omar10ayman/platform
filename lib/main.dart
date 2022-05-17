@@ -1,7 +1,5 @@
 import 'package:button/logo.dart';
 import 'package:flutter/material.dart';
-import 'package:button/stt.dart';
-import 'package:flutter/foundation.dart';
 
 void main() {
   runApp(const MyApp());

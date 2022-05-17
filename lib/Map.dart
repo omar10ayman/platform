@@ -1,5 +1,7 @@
+// ignore_for_file: file_names
+
 void main() {
-  Map<String, String> gifs = Map();
+  Map<String, String> gifs = {};
   gifs["animal"] = "assets/gifs/Animal.gif";
   // print(gifs["hello"]);
   // print("\n");
