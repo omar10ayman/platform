@@ -8,25 +8,11 @@ class SlideItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          slideList[index].title1,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-              fontSize: 35,
-              decoration: TextDecoration.none,
-              fontFamily: 'gill',
-              color: Colors.white),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Text(slideList[index].title2,
-            textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.red, fontSize: 25))
-      ],
+    return Transform.scale(
+      scale: 1,
+      child: Image.asset(
+        slideList[index].title1,
+      ),
     );
   }
 }

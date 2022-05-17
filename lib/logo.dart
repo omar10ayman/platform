@@ -13,11 +13,14 @@ class Logo extends StatefulWidget {
 
 class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
   late Animation omaranimation;
+  late Animation buttonanimation;
+
   late AnimationController animationController;
+
   //margin animation for image
-  late Animation<double> marginanimation1;
+  // late Animation<double> marginanimation1;
   //margin animation for button
-  late Animation<double> marginanimation2;
+  // late Animation<double> marginanimation2;
 
   int _currentPage = 0;
   final _pageController = PageController(initialPage: 0);
@@ -26,27 +29,37 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2000));
+        vsync: this, duration: const Duration(milliseconds: 2500));
     omaranimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
+    ).animate(
+        CurvedAnimation(parent: animationController, curve: Curves.linear))
+      ..addListener(() {
+        setState(() {});
+      });
+    buttonanimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
     ).animate(CurvedAnimation(
-        parent: animationController, curve: Curves.easeInOutQuad))
+        parent: animationController,
+        curve: const Interval(0.6, 1.0, curve: Curves.linear)))
       ..addListener(() {
         setState(() {});
       });
-    marginanimation1 = Tween<double>(begin: 100, end: 5).animate(
-        CurvedAnimation(
-            parent: animationController, curve: Curves.fastOutSlowIn))
-      ..addListener(() {
-        setState(() {});
-      });
-    marginanimation2 = Tween<double>(begin: 150, end: 605).animate(
-        CurvedAnimation(
-            parent: animationController, curve: Curves.fastOutSlowIn))
-      ..addListener(() {
-        setState(() {});
-      });
+
+    // marginanimation1 = Tween<double>(begin: 100, end: 80).animate(
+    //     CurvedAnimation(
+    //         parent: animationController, curve: Curves.fastOutSlowIn))
+    //   ..addListener(() {
+    //     setState(() {});
+    //   });
+    // marginanimation2 = Tween<double>(begin: 150, end: 680).animate(
+    //     CurvedAnimation(
+    //         parent: animationController, curve: Curves.fastOutSlowIn))
+    //   ..addListener(() {
+    //     setState(() {});
+    //   });
     animationController.forward();
   }
 
@@ -54,6 +67,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
   void dispose() {
     super.dispose();
     animationController.dispose();
+
     _pageController.dispose();
   }
 
@@ -85,9 +99,11 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
           child: Transform.scale(
             scale: 0.6,
             child: AnimatedContainer(
-                margin: EdgeInsets.only(top: marginanimation1.value),
+                margin: const EdgeInsets.only(top: 80),
                 duration: const Duration(milliseconds: 0),
-                child: Image.asset("images/24_cropped.png")),
+                child: Image.asset(
+                  "images/2.png",
+                )),
           ),
         ),
         // TweenAnimationBuilder(
@@ -104,9 +120,9 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
         //   },
         // ),
         Opacity(
-          opacity: omaranimation.value,
+          opacity: buttonanimation.value,
           child: Padding(
-            padding: const EdgeInsets.only(top: 400),
+            padding: const EdgeInsets.only(top: 200),
             child: PageView.builder(
                 onPageChanged: _onPageChanged,
                 scrollDirection: Axis.horizontal,
@@ -130,7 +146,7 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
           // ),
         ),
         Opacity(
-          opacity: omaranimation.value,
+          opacity: buttonanimation.value,
           child: Padding(
             padding: const EdgeInsets.only(top: 650, left: 169),
             child: Stack(
@@ -154,34 +170,33 @@ class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
           ),
         ),
         Opacity(
-          opacity: omaranimation.value,
+          opacity: buttonanimation.value,
           child: Center(
             child: AnimatedContainer(
-                margin: EdgeInsets.only(top: marginanimation2.value),
-                duration: const Duration(milliseconds: 0),
-                child: SizedBox(
-                  height: 65,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SpeechToText()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 10, right: 35, left: 35),
-                          primary: Colors.black.withOpacity(0),
-                          onSurface: Colors.white,
-                          side: const BorderSide(color: Colors.white, width: 2),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30))),
-                      child: const Text(
-                        "get started",
-                        style: TextStyle(fontSize: 33, fontFamily: 'gill'),
-                      )),
-                )),
+              margin: const EdgeInsets.only(top: 630),
+              height: 65,
+              duration: const Duration(milliseconds: 0),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SpeechToText()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      padding:
+                          const EdgeInsetsDirectional.only(start: 70, end: 70),
+                      primary: Colors.black.withOpacity(0),
+                      onSurface: Colors.white,
+                      side: const BorderSide(color: Colors.white, width: 2),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30))),
+                  child: const Text(
+                    "Get Started",
+                    style: TextStyle(fontSize: 33, fontFamily: 'gill'),
+                  )),
+            ),
           ),
         )
       ],
