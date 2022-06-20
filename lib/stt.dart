@@ -36,7 +36,7 @@ class _SpeechToTextState extends State<SpeechToText> {
   bool _isListening = false;
 
   String transcription = '';
-  String asset = 'assets/gifs/Null.png';
+  String asset = 'assets/gifs/Welcome.gif';
   var color = Colors.grey[300];
 
   // String _currentLocale = 'en_US';
