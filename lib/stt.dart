@@ -70,83 +70,100 @@ class _SpeechToTextState extends State<SpeechToText> {
                                 transcription == 'bye' ||
                                 transcription == 'مع السلامه'
                             ? asset = 'assets/gifs/Goodbye.gif'
-                            : transcription == 'عليكم السلام'
+                            : transcription == 'عليكم السلام' ||
+                                    transcription == 'وعليكم السلام'
                                 ? asset = 'assets/gifs/عليكم السلام.gif'
-                                : transcription == 'رايح ماتش كوره'
+                                : transcription == 'رايح ماتش كوره' ||
+                                        transcription == 'عندي ماتش كوره'
                                     ? asset = 'assets/gifs/رايح ماتش كورة.gif'
                                     : transcription == 'سلام'
                                         ? asset =
                                             'assets/gifs/See you later.gif'
-                                        : transcription == 'فاضي النهارده'
+                                        : transcription == 'فاضي النهارده' ||
+                                                transcription ==
+                                                    'وراك ايه النهارده'
                                             ? asset =
                                                 'assets/gifs/فاضي النهاردة.gif'
                                             : transcription == 'ربنا معك'
                                                 ? asset =
                                                     'assets/gifs/ربنا معاك.gif'
-                                                : transcription == 'الحمدلله' ||
+                                                : transcription ==
+                                                            'الحمد لله' ||
                                                         transcription ==
                                                             'thank God'
                                                     ? asset =
                                                         'assets/gifs/الحمدلله.gif'
-                                                    : transcription == 'animal'
+                                                    : transcription ==
+                                                                'animal' ||
+                                                            transcription ==
+                                                                'حيوان'
                                                         ? asset =
                                                             'assets/gifs/Animal.gif'
                                                         : transcription ==
-                                                                'anything'
+                                                                    'anything' ||
+                                                                transcription ==
+                                                                    'اي حاجه'
                                                             ? asset =
                                                                 'assets/gifs/Anything.gif'
                                                             : transcription ==
-                                                                    'banana'
+                                                                        'banana' ||
+                                                                    transcription ==
+                                                                        'موزه'
                                                                 ? asset =
                                                                     'assets/gifs/Banana.gif'
-                                                                : transcription ==
-                                                                        'bird'
+                                                                : transcription == 'bird' ||
+                                                                        transcription ==
+                                                                            'عصفوره' ||
+                                                                        transcription ==
+                                                                            'حمامه'
                                                                     ? asset =
                                                                         'assets/gifs/Bird.gif'
                                                                     : transcription ==
-                                                                            'biscuit'
+                                                                                'biscuit' ||
+                                                                            transcription ==
+                                                                                'بسكوت'
                                                                         ? asset =
                                                                             'assets/gifs/Biscuit.gif'
                                                                         : transcription == 'blanket' ||
                                                                                 transcription == 'بطانيه'
                                                                             ? asset = 'assets/gifs/Blanket.gif'
-                                                                            : transcription == 'boy'
+                                                                            : transcription == 'boy' || transcription == 'ولد' || transcription == 'يا ولد يا ولد'
                                                                                 ? asset = 'assets/gifs/Boy.gif'
-                                                                                : transcription == 'bread'
+                                                                                : transcription == 'bread' || transcription == 'عيش' || transcription == 'خبز'
                                                                                     ? asset = 'assets/gifs/Bread.gif'
-                                                                                    : transcription == 'breakfast'
+                                                                                    : transcription == 'breakfast' || transcription == 'فطار' || transcription == 'عاوز افطر'
                                                                                         ? asset = 'assets/gifs/Breakfast.gif'
-                                                                                        : transcription == 'brother'
+                                                                                        : transcription == 'brother' || transcription == 'اخي' || transcription == 'اخويا'
                                                                                             ? asset = 'assets/gifs/Brother.gif'
-                                                                                            : transcription == 'burger'
+                                                                                            : transcription == 'burger' || transcription == 'برجر'
                                                                                                 ? asset = 'assets/gifs/Burger.gif'
-                                                                                                : transcription == 'camera'
+                                                                                                : transcription == 'camera' || transcription == 'كاميرا' || transcription == 'عاوز اتصور'
                                                                                                     ? asset = 'assets/gifs/Camera.gif'
-                                                                                                    : transcription == 'cat'
+                                                                                                    : transcription == 'cat' || transcription == 'قطه'
                                                                                                         ? asset = 'assets/gifs/Cat.gif'
                                                                                                         : transcription == 'cheese' || transcription == 'جبنه'
                                                                                                             ? asset = 'assets/gifs/Cheese.gif'
-                                                                                                            : transcription == 'chicken'
+                                                                                                            : transcription == 'chicken' || transcription == 'فراخ'
                                                                                                                 ? asset = 'assets/gifs/Chicken.gif'
-                                                                                                                : transcription == 'child'
+                                                                                                                : transcription == 'child' || transcription == 'طفل'
                                                                                                                     ? asset = 'assets/gifs/Child.gif'
-                                                                                                                    : transcription == 'chocolate'
+                                                                                                                    : transcription == 'chocolate' || transcription == 'شوكولاته'
                                                                                                                         ? asset = 'assets/gifs/Chocolate.gif'
                                                                                                                         : transcription == 'close' || transcription == 'اقفل'
                                                                                                                             ? asset = 'assets/gifs/Close.gif'
-                                                                                                                            : transcription == 'cup' || transcription == 'Cup'
+                                                                                                                            : transcription == 'cup' || transcription == 'Cup' || transcription == 'كوبايه'
                                                                                                                                 ? asset = 'assets/gifs/Cup.gif'
-                                                                                                                                : transcription == 'daughter'
+                                                                                                                                : transcription == 'daughter' || transcription == 'بنتي'
                                                                                                                                     ? asset = 'assets/gifs/Daughter.gif'
-                                                                                                                                    : transcription == 'dinner'
+                                                                                                                                    : transcription == 'dinner' || transcription == 'عشا' || transcription == 'عشاء'
                                                                                                                                         ? asset = 'assets/gifs/Dinner.gif'
                                                                                                                                         : transcription == 'dog' || transcription == 'كلب'
                                                                                                                                             ? asset = 'assets/gifs/Dog.gif'
-                                                                                                                                            : transcription == 'drink' || transcription == 'drinking'
+                                                                                                                                            : transcription == 'drink' || transcription == 'drinking' || transcription == 'بشرب'
                                                                                                                                                 ? asset = 'assets/gifs/Drinking.gif'
                                                                                                                                                 : transcription == 'duck' || transcription == 'بطه'
                                                                                                                                                     ? asset = 'assets/gifs/Duck.gif'
-                                                                                                                                                    : transcription == 'eat' || transcription == 'eating' || transcription == 'اكل'
+                                                                                                                                                    : transcription == 'eat' || transcription == 'eating' || transcription == 'اكل' || transcription == 'باكل'
                                                                                                                                                         ? asset = 'assets/gifs/Eating.gif'
                                                                                                                                                         : transcription == 'egg' || transcription == 'eggs' || transcription == 'بيض'
                                                                                                                                                             ? asset = 'assets/gifs/Eggs.gif'
@@ -164,15 +181,15 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                                                                                                                                                     ? asset = 'assets/gifs/Gift.gif'
                                                                                                                                                                                     : transcription == 'girls' || transcription == 'بنت' || transcription == 'girl'
                                                                                                                                                                                         ? asset = 'assets/gifs/Girl.gif'
-                                                                                                                                                                                        : transcription == 'grandma'
+                                                                                                                                                                                        : transcription == 'grandma' || transcription == 'جدتى' || transcription == 'تيته'
                                                                                                                                                                                             ? asset = 'assets/gifs/Grandma.gif'
-                                                                                                                                                                                            : transcription == 'Grandpa'
+                                                                                                                                                                                            : transcription == 'Grandpa' || transcription == 'جدو'
                                                                                                                                                                                                 ? asset = 'assets/gifs/Grandpa.gif'
                                                                                                                                                                                                 : transcription == 'gum'
                                                                                                                                                                                                     ? asset = 'assets/gifs/Gum.gif'
                                                                                                                                                                                                     : transcription == 'he' || transcription == 'هو'
                                                                                                                                                                                                         ? asset = 'assets/gifs/He.gif'
-                                                                                                                                                                                                        : transcription == 'how are you' || transcription == 'ازيك'
+                                                                                                                                                                                                        : transcription == 'how are you' || transcription == 'ازيك' || transcription == 'عامل ايه'
                                                                                                                                                                                                             ? asset = 'assets/gifs/How are you.gif'
                                                                                                                                                                                                             : transcription == 'hungry' || transcription == 'جعان'
                                                                                                                                                                                                                 ? asset = 'assets/gifs/Hungry.gif'
@@ -202,15 +219,15 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                                                                                                                                                                                                                                 ? asset = 'assets/gifs/No.gif'
                                                                                                                                                                                                                                                                 : transcription == 'open' || transcription == 'افتح'
                                                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Open.gif'
-                                                                                                                                                                                                                                                                    : transcription == 'parents'
+                                                                                                                                                                                                                                                                    : transcription == 'parents' || transcription == 'بابا وماما'
                                                                                                                                                                                                                                                                         ? asset = 'assets/gifs/Parents.gif'
                                                                                                                                                                                                                                                                         : transcription == 'pizza' || transcription == 'بيتزا'
                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/Pizza.gif'
-                                                                                                                                                                                                                                                                            : transcription == 'plate'
+                                                                                                                                                                                                                                                                            : transcription == 'plate' || transcription == 'طبق'
                                                                                                                                                                                                                                                                                 ? asset = 'assets/gifs/Plate.gif'
                                                                                                                                                                                                                                                                                 : transcription == 'potato' || transcription == 'بطاطس'
                                                                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Potato.gif'
-                                                                                                                                                                                                                                                                                    : transcription == 'rabbit' || transcription == 'rabbits'
+                                                                                                                                                                                                                                                                                    : transcription == 'rabbit' || transcription == 'rabbits' || transcription == 'ارنب'
                                                                                                                                                                                                                                                                                         ? asset = 'assets/gifs/Rabbit.gif'
                                                                                                                                                                                                                                                                                         : transcription == 'restaurant' || transcription == 'مطعم'
                                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/Restaurant.gif'
@@ -220,15 +237,15 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                                                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Sandwich.gif'
                                                                                                                                                                                                                                                                                                     : transcription == 'school' || transcription == 'مدرسه'
                                                                                                                                                                                                                                                                                                         ? asset = 'assets/gifs/School.gif'
-                                                                                                                                                                                                                                                                                                        : transcription == 'sick' || transcription == 'عيان'
+                                                                                                                                                                                                                                                                                                        : transcription == 'sick' || transcription == 'عيان' || transcription == 'تعبان'
                                                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/Sick.gif'
-                                                                                                                                                                                                                                                                                                            : transcription == 'sister' || transcription == 'اخت'
+                                                                                                                                                                                                                                                                                                            : transcription == 'sister' || transcription == 'اخت' || transcription == 'اختي'
                                                                                                                                                                                                                                                                                                                 ? asset = 'assets/gifs/Sister.gif'
-                                                                                                                                                                                                                                                                                                                : transcription == 'smell'
+                                                                                                                                                                                                                                                                                                                : transcription == 'smell' || transcription == 'بشم'
                                                                                                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Smell.gif'
-                                                                                                                                                                                                                                                                                                                    : transcription == 'son' || transcription == 'ابن'
+                                                                                                                                                                                                                                                                                                                    : transcription == 'son' || transcription == 'ابن' || transcription == 'ابني'
                                                                                                                                                                                                                                                                                                                         ? asset = 'assets/gifs/Son.gif'
-                                                                                                                                                                                                                                                                                                                        : transcription == 'spaghetti'
+                                                                                                                                                                                                                                                                                                                        : transcription == 'spaghetti' || transcription == 'مكرونه'
                                                                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/Spaghetti.gif'
                                                                                                                                                                                                                                                                                                                             : transcription == 'spoon' || transcription == 'معلقه'
                                                                                                                                                                                                                                                                                                                                 ? asset = 'assets/gifs/Spoon.gif'
@@ -240,17 +257,17 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                                                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/Tomorrow.gif'
                                                                                                                                                                                                                                                                                                                                             : transcription == 'trip' || transcription == 'رحله'
                                                                                                                                                                                                                                                                                                                                                 ? asset = 'assets/gifs/Trip.gif'
-                                                                                                                                                                                                                                                                                                                                                : transcription == 'uncle'
+                                                                                                                                                                                                                                                                                                                                                : transcription == 'uncle' || transcription == 'عمي' || transcription == 'عمو'
                                                                                                                                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Uncle.gif'
-                                                                                                                                                                                                                                                                                                                                                    : transcription == 'us'
+                                                                                                                                                                                                                                                                                                                                                    : transcription == 'us' || transcription == 'كلنا' || transcription == 'احنا'
                                                                                                                                                                                                                                                                                                                                                         ? asset = 'assets/gifs/Us.gif'
                                                                                                                                                                                                                                                                                                                                                         : transcription == 'water' || transcription == 'مياه' || transcription == 'ماء'
                                                                                                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/Water.gif'
-                                                                                                                                                                                                                                                                                                                                                            : transcription == 'woman'
+                                                                                                                                                                                                                                                                                                                                                            : transcription == 'woman' || transcription == 'ست'
                                                                                                                                                                                                                                                                                                                                                                 ? asset = 'assets/gifs/Woman.gif'
                                                                                                                                                                                                                                                                                                                                                                 : transcription == 'year' || transcription == 'سنه'
                                                                                                                                                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Year.gif'
-                                                                                                                                                                                                                                                                                                                                                                    : transcription == 'yes' || transcription == 'ايوه'
+                                                                                                                                                                                                                                                                                                                                                                    : transcription == 'yes' || transcription == 'ايوه' || transcription == 'نعم'
                                                                                                                                                                                                                                                                                                                                                                         ? asset = 'assets/gifs/Yes.gif'
                                                                                                                                                                                                                                                                                                                                                                         : transcription == 'you' || transcription == 'انت'
                                                                                                                                                                                                                                                                                                                                                                             ? asset = 'assets/gifs/You.gif'
