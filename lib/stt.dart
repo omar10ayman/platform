@@ -52,7 +52,8 @@ class _SpeechToTextState extends State<SpeechToText> {
   void choose() {
     transcription == 'صباح الخير' ||
             transcription == 'صباح النور' ||
-            transcription == 'good morning'
+            transcription == 'good morning' ||
+            transcription == 'السلام عليكم'
         ? asset = 'assets/gifs/Good morning.gif'
         : transcription == 'كله تمام' || transcription == 'fine'
             ? asset = 'assets/gifs/Fine.gif'
