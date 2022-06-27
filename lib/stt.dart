@@ -53,6 +53,8 @@ class _SpeechToTextState extends State<SpeechToText> {
     transcription == 'صباح الخير' ||
             transcription == 'صباح النور' ||
             transcription == 'good morning' ||
+            transcription == 'hi' ||
+            transcription == 'hallo' ||
             transcription == 'السلام عليكم'
         ? asset = 'assets/gifs/Good morning.gif'
         : transcription == 'كله تمام' || transcription == 'fine'
@@ -75,14 +77,17 @@ class _SpeechToTextState extends State<SpeechToText> {
                                     transcription == 'وعليكم السلام'
                                 ? asset = 'assets/gifs/عليكم السلام.gif'
                                 : transcription == 'رايح ماتش كوره' ||
-                                        transcription == 'عندي ماتش كوره'
+                                        transcription == 'عندي ماتش كوره' ||
+                                        transcription == 'Go to play match'
                                     ? asset = 'assets/gifs/رايح ماتش كورة.gif'
-                                    : transcription == 'سلام'
+                                    : transcription == 'سلام' ||
+                                            transcription == 'See you later'
                                         ? asset =
                                             'assets/gifs/See you later.gif'
                                         : transcription == 'فاضي النهارده' ||
                                                 transcription ==
-                                                    'وراك ايه النهارده'
+                                                    'وراك ايه النهارده' ||
+                                                transcription == 'are you free'
                                             ? asset =
                                                 'assets/gifs/فاضي النهاردة.gif'
                                             : transcription == 'ربنا معك'
