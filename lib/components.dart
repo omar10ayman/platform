@@ -34,6 +34,7 @@ Widget Word(BuildContext context, input) {
                     builder: (_) {
                       return AlertDialog(
                         title: Image.asset("${input.asset}"),
+                        titlePadding: EdgeInsets.all(0),
                       );
                     });
               },

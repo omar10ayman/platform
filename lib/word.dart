@@ -37,7 +37,7 @@ class _WordsState extends State<Words> {
       DataModel(
           arbeic: "رايح ماتش كوره",
           asset: "assets/gifs/رايح ماتش كورة.gif",
-          english: "Go to play                                       match"),
+          english: "Go to play \nmatch"),
       DataModel(
           arbeic: "اي حاجه",
           asset: "assets/gifs/Anything.gif",
@@ -75,9 +75,12 @@ class _WordsState extends State<Words> {
           arbeic: "فطار",
           asset: "assets/gifs/Breakfast.gif",
           english: "breakfast"),
-      DataModel(arbeic: "اخي - اخويا", asset: "gif", english: "brother"),
       DataModel(
-          arbeic: "سلام", asset: "assets/gifs/Brother.gif", english: "later"),
+          arbeic: "اخي - اخويا",
+          asset: "assets/gifs/Brother.gif",
+          english: "brother"),
+      DataModel(
+          arbeic: "سلام", asset: "assets/gifs/Goodbye.gif", english: "later"),
       DataModel(
           arbeic: "برجر", asset: "assets/gifs/Burger.gif", english: "burger"),
       DataModel(

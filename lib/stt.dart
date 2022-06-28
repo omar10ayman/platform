@@ -334,9 +334,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                   padding: EdgeInsets.only(top: 55, bottom: 10),
                   // padding: const EdgeInsets.all(30.0),
                   child: Row(
-                    // mainAxisSize: MainAxisSize.max,
-
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(width: 45),
                       Container(
