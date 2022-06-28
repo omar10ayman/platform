@@ -191,7 +191,7 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                                                                                                                                                             ? asset = 'assets/gifs/Grandma.gif'
                                                                                                                                                                                             : transcription == 'Grandpa' || transcription == 'جدو'
                                                                                                                                                                                                 ? asset = 'assets/gifs/Grandpa.gif'
-                                                                                                                                                                                                : transcription == 'gum'
+                                                                                                                                                                                                : transcription == 'gum' || transcription == 'لبان'
                                                                                                                                                                                                     ? asset = 'assets/gifs/Gum.gif'
                                                                                                                                                                                                     : transcription == 'he' || transcription == 'هو'
                                                                                                                                                                                                         ? asset = 'assets/gifs/He.gif'
@@ -201,13 +201,13 @@ class _SpeechToTextState extends State<SpeechToText> {
                                                                                                                                                                                                                 ? asset = 'assets/gifs/Hungry.gif'
                                                                                                                                                                                                                 : transcription == 'I love you' || transcription == 'باحبك' || transcription == 'بحبك'
                                                                                                                                                                                                                     ? asset = 'assets/gifs/I love you.gif'
-                                                                                                                                                                                                                    : transcription == 'jam'
+                                                                                                                                                                                                                    : transcription == 'jam' || transcription == 'مربى'
                                                                                                                                                                                                                         ? asset = 'assets/gifs/Jam.gif'
                                                                                                                                                                                                                         : transcription == 'juice' || transcription == 'عصير'
                                                                                                                                                                                                                             ? asset = 'assets/gifs/Juice.gif'
                                                                                                                                                                                                                             : transcription == 'knife' || transcription == 'سكينه'
                                                                                                                                                                                                                                 ? asset = 'assets/gifs/Knife.gif'
-                                                                                                                                                                                                                                : transcription == 'lunch' || transcription == 'غدا'
+                                                                                                                                                                                                                                : transcription == 'lunch' || transcription == 'غدا' || transcription == 'غداء'
                                                                                                                                                                                                                                     ? asset = 'assets/gifs/Lunch.gif'
                                                                                                                                                                                                                                     : transcription == 'man' || transcription == 'راجل'
                                                                                                                                                                                                                                         ? asset = 'assets/gifs/Man.gif'
@@ -328,16 +328,34 @@ class _SpeechToTextState extends State<SpeechToText> {
             child: SingleChildScrollView(
               child: Column(children: [
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
-                Center(
-                  child: Container(
-                    padding: EdgeInsets.only(top: 55, bottom: 10),
-                    child: Text('Voice to sign language',
-                        style: TextStyle(
-                            fontFamily: 'gill',
-                            color: Colors.white,
-                            fontSize: 25)),
+                Padding(
+                  padding: EdgeInsets.only(top: 55, bottom: 10),
+                  // padding: const EdgeInsets.all(30.0),
+                  child: Row(
+                    // mainAxisSize: MainAxisSize.max,
+
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(width: 45),
+                      Container(
+                        // padding: EdgeInsets.only(top: 55, bottom: 10),
+                        child: Text('Voice to sign language',
+                            style: TextStyle(
+                                fontFamily: 'gill',
+                                color: Colors.white,
+                                fontSize: 25)),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed("word");
+                        },
+                        icon: Icon(Icons.info_outline),
+                        color: Colors.white,
+                        iconSize: 25,
+                      ),
+                    ],
                   ),
                 ),
                 Container(

@@ -6,7 +6,7 @@ Widget Word(BuildContext context, input) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: SizedBox(
-      height: 60,
+      height: 70,
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
